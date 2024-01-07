@@ -73,6 +73,10 @@ body {
       color: var(--almost-white);
       font-size: 2.5rem;
       cursor: text;
+
+      &::placeholder {
+        font-size: 1.6rem;
+      }
     }
 
     & button {
@@ -197,6 +201,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+
     & button {
       display: flex;
       align-items: center;
@@ -207,6 +212,7 @@ body {
       background-color: var(--neon-green);
       border: none;
       cursor: pointer;
+      color: var(--very-dark-grey);
 
       & h2 {
         font-weight: 500;
