@@ -18,7 +18,7 @@ function PasswordDisplay({ displayPassword }) {
   return (
     <div className="password-display">
       <h2>Password Generator</h2>
-      <label htmlFor="password-char">
+      <label htmlFor="password-char" className="password-display-field">
         <input
           type="text"
           placeholder="Your password will appear here"

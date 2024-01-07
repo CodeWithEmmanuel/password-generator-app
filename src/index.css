@@ -56,7 +56,7 @@ body {
     font-size: 1.8rem;
   }
 
-  & label {
+  .password-display-field {
     background-color: var(--dark-grey);
     display: flex;
     align-items: center;
