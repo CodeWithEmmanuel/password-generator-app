@@ -1,0 +1,285 @@
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap);
+:root {
+  --red: #f64a4a;
+  --orange: #fb7c58;
+  --yellow: #f8cd65;
+  --neon-green: #a4ffaf;
+  --almost-white: #e6e5ea;
+  --grey: #817d92;
+  --dark-grey: #24232c;
+  --very-dark-grey: #18171f;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+html {
+  color: #e6e5ea;
+  color: var(--almost-white);
+  font-family: JetBrains Mono, monospace;
+  font-size: 62.5%;
+}
+body {
+  background-color: #18171f;
+  background-color: var(--very-dark-grey);
+  min-height: 100vh;
+  padding: 120px 25px;
+  width: 100vw;
+}
+.App {
+  gap: 20px;
+  height: 65vh;
+  margin: 0 auto;
+  width: 100%;
+}
+.App,
+.password-display {
+  display: flex;
+  flex-direction: column;
+}
+.password-display {
+  align-items: center;
+  gap: 25px;
+  height: 100px;
+  justify-content: center;
+  & h2 {
+    color: #817d92;
+    color: var(--grey);
+    font-size: 1.8rem;
+  }
+  .password-display-field {
+    display: flex;
+    align-items: center;
+    background-color: #24232c;
+    background-color: var(--dark-grey);
+    height: 58px;
+    justify-content: space-between;
+    padding: 15px 25px;
+    width: 100%;
+    & input {
+      background-color: initial;
+      border: none;
+      color: #e6e5ea;
+      color: var(--almost-white);
+      cursor: text;
+      flex: 1 1;
+      font-size: 2.5rem;
+      height: 100%;
+    }
+    & button {
+      align-items: center;
+      background-color: initial;
+      border: none;
+      cursor: pointer;
+      gap: 10px;
+      justify-content: center;
+      position: relative;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        & svg {
+          transform: scale(1.1);
+        }
+      }
+      &:active {
+        opacity: 0.3;
+      }
+      & svg {
+        fill: #a4ffaf;
+        fill: var(--neon-green);
+      }
+      & h2 {
+        color: #a4ffaf;
+        color: var(--neon-green);
+        font-size: 1.8rem;
+        font-weight: 600;
+        left: -80px;
+        opacity: 0.9;
+        position: absolute;
+        top: 2.5px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+.password-controls {
+  background-color: #24232c;
+  background-color: var(--dark-grey);
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px;
+  .password-params {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .controls-heading {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      & p {
+        font-size: 1.5rem;
+      }
+      & h2 {
+        color: #a4ffaf;
+        color: var(--neon-green);
+        font-size: 2rem;
+      }
+    }
+    .char-length {
+      & input {
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+    .controls-checks {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.6rem;
+      gap: 15px;
+      & label {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: 20px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: #a4ffaf;
+          color: var(--neon-green);
+        }
+        &:active {
+          opacity: 0.3;
+        }
+        & input {
+          -webkit-appearance: none;
+          appearance: none;
+          background: #0000;
+          border: 1px solid #e6e5ea;
+          border: 1px solid var(--almost-white);
+          border-radius: 50%;
+          cursor: pointer;
+          height: 18px;
+          outline: none;
+          width: 18px;
+          &:checked {
+            background-color: #a4ffaf;
+            background-color: var(--neon-green);
+            border: 1px solid #a4ffaf;
+            border: 1px solid var(--neon-green);
+            &:after {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+  }
+  .generate-password {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    & button {
+      align-items: center;
+      background-color: #a4ffaf;
+      background-color: var(--neon-green);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      padding: 15px 30px;
+      width: 100%;
+      & h2 {
+        font-weight: 500;
+      }
+      &:hover {
+        background-color: initial;
+        border: 1px solid #a4ffaf;
+        border: 1px solid var(--neon-green);
+        color: #a4ffaf;
+        color: var(--neon-green);
+        & svg {
+          fill: #a4ffaf;
+          fill: var(--neon-green);
+        }
+      }
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+  .password-strength {
+    align-items: center;
+    background-color: #18171f;
+    background-color: var(--very-dark-grey);
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    padding: 25px;
+    & h2 {
+      color: #817d92;
+      color: var(--grey);
+      font-size: 2rem;
+    }
+    .strength-bars {
+      align-items: center;
+      display: flex;
+      gap: 20px;
+      & h2 {
+        color: #e6e5ea;
+        color: var(--almost-white);
+      }
+      .strength-bar {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        & span {
+          background-color: initial;
+          border: 2.8px solid #e6e5ea;
+          border: 2.8px solid var(--almost-white);
+          height: 38px;
+          width: 13px;
+        }
+        .too-weak-strength {
+          background-color: #f64a4a;
+          background-color: var(--red);
+          border-color: #f64a4a;
+          border-color: var(--red);
+        }
+        .weak-strength {
+          background-color: #fb7c58;
+          background-color: var(--orange);
+          border-color: #fb7c58;
+          border-color: var(--orange);
+        }
+        .medium-strength {
+          background-color: #f8cd65;
+          background-color: var(--yellow);
+          border-color: #f8cd65;
+          border-color: var(--yellow);
+        }
+        .strong-strength {
+          background-color: #a4ffaf;
+          background-color: var(--neon-green);
+          border-color: #a4ffaf;
+          border-color: var(--neon-green);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .App {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 950px) {
+  .App {
+    width: 50rem;
+  }
+}
+/*# sourceMappingURL=main.97cbb30d.css.map*/
